@@ -9,12 +9,13 @@
 
 1742319360 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ir.h
 
-1742319360 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.c
+1742326776 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.c
 	<avr/io.h>
 	<avr/interrupt.h>
+	<stdbool.h>
 	"stepperDriver.h"
 
-1742319360 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
+1742326776 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
 
 1742319360 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.c
 	<avr/io.h>
@@ -22,4 +23,16 @@
 	"ultrasoon.h"
 
 1742319360 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.h
+
+1742319821 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\main.c
+	<avr/io.h>
+	"main.h"
+
+1742326776 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\main.h
+	"IR.h"
+	"stepperDriver.h"
+	"ultrasoon.h"
+	"navigatieLogica.h"
+
+1742326776 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.h
 

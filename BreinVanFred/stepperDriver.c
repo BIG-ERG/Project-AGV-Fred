@@ -12,16 +12,25 @@ OCRA value: 1*1 = 1
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <stdbool.h>
 #include "stepperDriver.h"
 
 void initPinsStepper (void){
-	// Config pins as output
+	// Config pwm pins as output
 	DDR_STEP_R |= (1<<STEPPER_RIGHT);
 	DDR_STEP_L |= (1<<STEPPER_LEFT);
 
-	// Output low
+	// Output pwm low
 	PORT_STEP_R &= ~(1<<STEPPER_RIGHT);
 	PORT_STEP_L &= ~(1<<STEPPER_LEFT);
+
+	//config direction pins as output
+	DDR_DIR_L |= (1<<STEPPER_LEFT_DIR);
+	DDR_DIR_R |= (1<<STEPPER_RIGHT_DIR);
+
+	//output direction low
+	PORT_DIR_L |= (1<<STEPPER_LEFT_DIR);
+	PORT_DIR_R |= (1<<STEPPER_RIGHT_DIR);
 }
 
 void initTimer1Stepper(void){
@@ -44,4 +53,12 @@ void speedStepperRight(int PWMRight){
 
 void speedStepperLeft(int PWMLeft){
     OCR1B = PWMLeft;
+}
+
+void toggledirectionStepperLeft(){
+    PORT_DIR_L ^= (1<<STEPPER_LEFT_DIR);
+}
+
+void toggledirectionStepperRight(){
+    PORT_DIR_R ^= (1<<STEPPER_RIGHT_DIR);
 }

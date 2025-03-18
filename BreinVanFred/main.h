@@ -4,5 +4,6 @@
 #include "IR.h"
 #include "stepperDriver.h"
 #include "ultrasoon.h"
+#include "navigatieLogica.h"
 
 #endif // MAIN_H_INCLUDED
