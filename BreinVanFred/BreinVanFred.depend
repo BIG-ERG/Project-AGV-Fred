@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1742318749 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\fuse.c
+	<avr/io.h>
+
+1742319360 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ir.c
+	"IR.h"
+	<avr/io.h>
+	<util/delay.h>
+
+1742319360 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ir.h
+
+1742319360 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	"stepperDriver.h"
+
+1742319360 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
+
+1742319360 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	"ultrasoon.h"
+
+1742319360 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.h
+
