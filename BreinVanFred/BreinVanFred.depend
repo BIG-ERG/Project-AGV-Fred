@@ -15,7 +15,7 @@
 	<stdbool.h>
 	"stepperDriver.h"
 
-1742326776 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
+1742490364 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
 
 1742319360 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.c
 	<avr/io.h>
@@ -35,4 +35,10 @@
 	"navigatieLogica.h"
 
 1742326776 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.h
+
+1742327159 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
+	<avr/io.h>
+	"navigatieLogica.h"
+	"ultrasoon.h"
+	"stepperDriver.h"
 

@@ -1,31 +1,29 @@
-#ifndef STEPPERDRIVER_H_INCLUDED
-#define STEPPERDRIVER_H_INCLUDED
+#ifndef STEPPER_DRIVER_H_INCLUDED
+#define STEPPER_DRIVER_H_INCLUDED
 
-#define TOPVALUE 1
+#define STEPVALUE 1 //16us
 
-#define STEPPER_LEFT PB5
-#define STEPPER_RIGHT PB6
-#define DDR_STEP_R  DDRB
-#define PORT_STEP_R PORTB
-#define DDR_STEP_L  DDRB
-#define PORT_STEP_L PORTB
+#define STEPPER_RIGHT PE3
+#define DDR_STEP_R  DDRE
+#define PORT_STEP_R PORTE
+#define DDR_DIR_R DDRG
+#define PORT_DIR_R PG4
 
-#define STEPPER_RIGHT_DIR PB4
-#define DDR_DIR_R   DDRB
-#define PORT_DIR_R  PORTB
-
-#define STEPPER_LEFT_DIR PH6
-#define DDR_DIR_L   DDRB
-#define PORT_DIR_L  PORTH
+#define STEPPER_LEFT PH3
+#define DDR_STEP_L  DDRH
+#define PORT_STEP_L PORTH
+#define DDR_DIR_L DDRH
+#define PORT_DIR_L PH4
 
 void initPinsStepper (void);
 void initTimer1Stepper(void);
+void initTimer4Stepper(void);
 void initStepper(void);
 
 void speedStepperRight(int PWMRight);
 void speedStepperLeft(int PWMLeft);
 
-void toggledirectionStepperLeft(void);
-void toggledirectionStepperRight(void);
+void toggleStepperDirectionRight(void);
+void toggleStepperDirectionLeft(void);
 
-#endif // STEPPERDRIVER_H_INCLUDED
+#endif // STEPPER_DRIVER_H_INCLUDED

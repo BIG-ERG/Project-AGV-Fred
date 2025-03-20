@@ -1,64 +1,63 @@
 /*
 step instelling: sixteen steps (MS1 hoog, MS2 hoog, MS3 hoog)
 stepper right: digital pin 11
-stepper left: digital pin 12
 voorlopig geen enable/disable pin voor driver board
-
-f = 400 Hz -> T = 0.0025 s -> 0.0025*16000000 = 40000 cycles
-Prescaler: 16000000/40000 = 0.61 -> 1 -> CS = 0b001
-Top-value: 16000000/256 = 62500
-OCRA value: 1*1 = 1
 */
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <stdbool.h>
 #include "stepperDriver.h"
 
 void initPinsStepper (void){
-	// Config pwm pins as output
+	// Config pins as output
 	DDR_STEP_R |= (1<<STEPPER_RIGHT);
 	DDR_STEP_L |= (1<<STEPPER_LEFT);
 
-	// Output pwm low
+	// Output low
 	PORT_STEP_R &= ~(1<<STEPPER_RIGHT);
 	PORT_STEP_L &= ~(1<<STEPPER_LEFT);
-
-	//config direction pins as output
-	DDR_DIR_L |= (1<<STEPPER_LEFT_DIR);
-	DDR_DIR_R |= (1<<STEPPER_RIGHT_DIR);
-
-	//output direction low
-	PORT_DIR_L |= (1<<STEPPER_LEFT_DIR);
-	PORT_DIR_R |= (1<<STEPPER_RIGHT_DIR);
 }
 
-void initTimer1Stepper(void){
-    // Use mode 14, clkdiv = 1
-    TCCR1A = (1<<WGM11) | (0<<WGM10) | (1<<COM1A1) | (1<<COM1A0) | (1<<COM1B0) | (1<<COM1B1);
-    TCCR1B = (1<<WGM13) | (1<<WGM12) | (0<<CS12) | (0<<CS11) | (1<<CS10);
+//stepper right
+void initTimer3Stepper(void){
+    // Use mode 14, prescaler = 256
+    TCCR3A = (1<<WGM31) | (0<<WGM30) | (1<<COM3A1) | (1<<COM3A0);
+    TCCR3B = (1<<WGM33) | (1<<WGM32) | (1<<CS32) | (0<<CS31) | (0<<CS30);
 
 	//define top value
-	ICR1 = TOPVALUE;
+    OCR3A = STEPVALUE;
 }
 
+//stepper left
+void initTimer4Stepper(void){
+    // Use mode 14, prescaler = 256
+    TCCR4A = (1<<WGM41) | (0<<WGM40) | (1<<COM4A1) | (1<<COM4A0);
+    TCCR4B = (1<<WGM43) | (1<<WGM42) | (1<<CS42) | (0<<CS41) | (0<<CS40);
+
+	//define top value
+    OCR4A = STEPVALUE;
+}
+
+
 void initStepper(void){
-    initTimer1Stepper();
+    initTimer4Stepper();
+    initTimer3Stepper();
     initPinsStepper();
 }
 
 void speedStepperRight(int PWMRight){
-    OCR1A = PWMRight;
+    ICR3 = PWMRight;
 }
 
 void speedStepperLeft(int PWMLeft){
-    OCR1B = PWMLeft;
+    ICR4 = PWMLeft;
 }
 
-void toggledirectionStepperLeft(){
-    PORT_DIR_L ^= (1<<STEPPER_LEFT_DIR);
+void toggleStepperDirectionRight(void){
+    DDR_DIR_R ^= ~(1<<PORT_DIR_R);
 }
 
-void toggledirectionStepperRight(){
-    PORT_DIR_R ^= (1<<STEPPER_RIGHT_DIR);
+void toggleStepperDirectionLeft(void){
+    DDR_DIR_L ^= (1<<PORT_DIR_L);
 }
+
