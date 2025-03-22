@@ -9,7 +9,7 @@ void init_timer5(void);
 void init_pins_ultrasoon(void);
 void init_ultrasoon(void);
 
-extern volatile int distance_right;
-extern volatile int distance_left;
+extern volatile double distance_right;
+extern volatile double distance_left;
 
 #endif // ULTRASOON_H_INCLUDED

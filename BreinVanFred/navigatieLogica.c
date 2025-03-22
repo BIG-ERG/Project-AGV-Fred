@@ -5,12 +5,20 @@
 #include "stepperDriver.h"
 
 void rechtdoor(void){
-    //ratio bepaald welke motor langzamer moet draaien relatief aan de ander om centraal te staan aan de route
-    int ratio;
-    if (distance_right < distance_left)
-        ratio = distance_right / distance_left;
-    else
-        ratio = distance_left / distance_right;
+    //start driving
+    speedStepperLeft(TOPSPEED);
+    speedStepperRight(TOPSPEED);
+    //while agv binnen het pad is
+    while(distance_right||distance_left<50){
+        //bepaal ratio van afwijking en gebruik deze om de snelheid aan te passen
+        if (distance_right < distance_left)
+            speedStepperLeft(TOPSPEED*(distance_right/distance_left));
+        else
+            speedStepperRight(TOPSPEED*(distance_left/distance_right));
+    }
+    //stop driving
+    speedStepperLeft(0);
+    speedStepperRight(0);
 }
 
 /*

@@ -12,10 +12,14 @@ void initPinsStepper (void){
 	// Config pins as output
 	DDR_STEP_R |= (1<<STEPPER_RIGHT);
 	DDR_STEP_L |= (1<<STEPPER_LEFT);
+	DDR_DIR_R |= (1<<PORT_DIR_R);
+	DDR_DIR_L |= (1<<PORT_DIR_L);
 
 	// Output low
 	PORT_STEP_R &= ~(1<<STEPPER_RIGHT);
 	PORT_STEP_L &= ~(1<<STEPPER_LEFT);
+	PORT_DIR_L &= ~(1<<DIRECTION_L);
+	PORT_DIR_R &= ~(1<<DIRECTION_R);
 }
 
 //stepper right
@@ -54,10 +58,10 @@ void speedStepperLeft(int PWMLeft){
 }
 
 void toggleStepperDirectionRight(void){
-    DDR_DIR_R ^= ~(1<<PORT_DIR_R);
+    PORT_DIR_R ^= ~(1<<DIRECTION_R);
 }
 
 void toggleStepperDirectionLeft(void){
-    DDR_DIR_L ^= (1<<PORT_DIR_L);
+    PORT_DIR_L ^= (1<<DIRECTION_L);
 }
 

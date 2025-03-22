@@ -38,8 +38,8 @@ void init_ultrasoon(void){
     init_timer5();
 }
 
-volatile int distance_right;
-volatile int distance_left;
+volatile double distance_right;
+volatile double distance_left;
 volatile int current_sensor=0;
 
 ISR(TIMER5_OVF_vect){
