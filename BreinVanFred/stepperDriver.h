@@ -4,6 +4,11 @@
 #define STEPVALUE 1 //16us
 #define TOPSPEED 100 //moet nog getest worden
 
+#define STEPANGLE 5.6
+#define omtrekWiel  188.5  //D*pi
+#define breedteAGV 134
+#define afstandWielAgv 5 //moet nog nagechekt worden
+
 #define STEPPER_RIGHT PE3
 #define DDR_STEP_R  DDRE
 #define PORT_STEP_R PORTE
@@ -28,5 +33,9 @@ void speedStepperLeft(int PWMLeft);
 
 void toggleStepperDirectionRight(void);
 void toggleStepperDirectionLeft(void);
+
+extern volatile unsigned int stepCounterLeft;
+extern volatile unsigned int stepCounterRight;
+
 
 #endif // STEPPER_DRIVER_H_INCLUDED

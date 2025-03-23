@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#include <math.h>
 
 #include "navigatieLogica.h"
 #include "ultrasoon.h"
@@ -17,6 +18,23 @@ void rechtdoor(void){
             speedStepperRight(TOPSPEED*(distance_left/distance_right));
     }
     //stop driving
+    speedStepperLeft(0);
+    speedStepperRight(0);
+}
+
+void rechtsom(void){
+    double stepsOuter = ((((distance_left + breedteAGV + afstandWielAgv)*M_PI)/omtrekWiel)*360)/STEPANGLE;
+    double stepsInner = ((((distance_right - afstandWielAgv)*M_PI)/omtrekWiel)*360)/STEPANGLE;
+    double stepRatio = stepsOuter/stepsInner;
+
+    //clear stepcounter
+    stepCounterLeft=0;
+    //start turning
+    while(stepCounterLeft<stepsOuter){
+        speedStepperLeft(TOPSPEED);
+        speedStepperRight(TOPSPEED*stepRatio);
+    }
+    //stop turning
     speedStepperLeft(0);
     speedStepperRight(0);
 }

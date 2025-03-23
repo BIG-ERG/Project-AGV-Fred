@@ -9,12 +9,12 @@
 
 1742319360 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ir.h
 
-1742666031 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.c
+1742725474 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.c
 	<avr/io.h>
 	<avr/interrupt.h>
 	"stepperDriver.h"
 
-1742666348 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
+1742725507 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
 
 1742666467 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.c
 	<avr/io.h>
@@ -35,8 +35,9 @@
 
 1742326776 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.h
 
-1742327159 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
+1742725474 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
 	<avr/io.h>
+	<math.h>
 	"navigatieLogica.h"
 	"ultrasoon.h"
 	"stepperDriver.h"

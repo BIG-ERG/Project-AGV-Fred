@@ -28,7 +28,10 @@ void initTimer3Stepper(void){
     TCCR3A = (1<<WGM31) | (0<<WGM30) | (1<<COM3A1) | (1<<COM3A0);
     TCCR3B = (1<<WGM33) | (1<<WGM32) | (1<<CS32) | (0<<CS31) | (0<<CS30);
 
-	//define top value
+    //interrupt on inputcapture
+    TIMSK3 = (1<<ICIE3);
+
+	//define step value
     OCR3A = STEPVALUE;
 }
 
@@ -38,7 +41,10 @@ void initTimer4Stepper(void){
     TCCR4A = (1<<WGM41) | (0<<WGM40) | (1<<COM4A1) | (1<<COM4A0);
     TCCR4B = (1<<WGM43) | (1<<WGM42) | (1<<CS42) | (0<<CS41) | (0<<CS40);
 
-	//define top value
+    //interrupt on inputcapture
+    TIMSK4 = (1<<ICIE4);
+
+	//define step value
     OCR4A = STEPVALUE;
 }
 
@@ -65,3 +71,12 @@ void toggleStepperDirectionLeft(void){
     PORT_DIR_L ^= (1<<DIRECTION_L);
 }
 
+volatile unsigned int stepCounterLeft = 0;
+ISR(TIMER4_OVF_vect){
+    stepCounterLeft++;
+}
+
+volatile unsigned int stepCounterRight = 0;
+ISR(TIMER3_OVF_vect){
+    stepCounterRight++;
+}
