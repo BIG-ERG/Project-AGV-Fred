@@ -38,8 +38,8 @@ void init_ultrasoon(void){
     init_timer5();
 }
 
-volatile double distance_right;
-volatile double distance_left;
+volatile int distance_right;
+volatile int distance_left;
 volatile int current_sensor=0;
 
 ISR(TIMER5_OVF_vect){
@@ -55,10 +55,10 @@ ISR(TIMER5_CAPT_vect){
         TCCR5B &= ~(1 << ICES5);  // Switch to falling edge
     }
     else {
-        int distance = (ICR5 - start_time) / 117;  // Calculate distance in cm
+        int distance = (ICR5 - start_time) / 117;  // Calculate distance in mm
 
         if (current_sensor == 0) {
-            distance_left = distance*100;  // Store distance for Sensor A
+            distance_left = distance;  // Store distance for Sensor A
         } else {
             distance_right = distance;  // Store distance for Sensor B
         }

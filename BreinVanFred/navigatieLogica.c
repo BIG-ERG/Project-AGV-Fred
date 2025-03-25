@@ -1,21 +1,26 @@
 #include <avr/io.h>
 #include <math.h>
+#include <util/delay.h>
 
 #include "navigatieLogica.h"
-#include "ultrasoon.h"
-#include "stepperDriver.h"
 
 void rechtdoor(void){
-    //start driving
-    speedStepperLeft(TOPSPEED);
-    speedStepperRight(TOPSPEED);
     //while agv binnen het pad is
-    while(distance_right||distance_left<50){
-        //bepaal ratio van afwijking en gebruik deze om de snelheid aan te passen
-        if (distance_right < distance_left)
-            speedStepperLeft(TOPSPEED*(distance_right/distance_left));
-        else
-            speedStepperRight(TOPSPEED*(distance_left/distance_right));
+    while(distance_right||distance_left>100){
+        if(distance_left==distance_right){
+            speedStepperLeft(TOPSPEED);
+            speedStepperRight(TOPSPEED);
+        }
+        else{
+            if (distance_right < distance_left){
+                speedStepperLeft(85);
+                speedStepperRight(TOPSPEED);
+            }
+            if(distance_left< distance_right){
+                speedStepperRight(85);
+                speedStepperLeft(TOPSPEED);
+            }
+        }
     }
     //stop driving
     speedStepperLeft(0);

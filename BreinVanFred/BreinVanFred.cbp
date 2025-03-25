@@ -54,6 +54,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="IR.h" />
+		<Unit filename="display.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="display.h" />
 		<Unit filename="fuse.c">
 			<Option compilerVar="CC" />
 		</Unit>

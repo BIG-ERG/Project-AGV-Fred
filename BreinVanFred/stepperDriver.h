@@ -2,12 +2,12 @@
 #define STEPPER_DRIVER_H_INCLUDED
 
 #define STEPVALUE 1 //16us
-#define TOPSPEED 100 //moet nog getest worden
+#define TOPSPEED 50 //moet nog getest worden
 
 #define STEPANGLE 5.6
 #define omtrekWiel  188.5  //D*pi
 #define breedteAGV 134
-#define afstandWielAgv 5 //moet nog nagechekt worden
+#define afstandWielAgv 13 //mm
 
 #define STEPPER_RIGHT PE3
 #define DDR_STEP_R  DDRE
