@@ -4,61 +4,66 @@
 
 #include "navigatieLogica.h"
 
-void rechtdoor(void){
-    //while agv binnen het pad is
-    while(distance_right||distance_left>100){
-        if(distance_left==distance_right){
-            speedStepperLeft(TOPSPEED);
-            speedStepperRight(TOPSPEED);
-        }
-        else{
-            if (distance_right < distance_left){
-                speedStepperLeft(85);
-                speedStepperRight(TOPSPEED);
-            }
-            if(distance_left< distance_right){
-                speedStepperRight(85);
-                speedStepperLeft(TOPSPEED);
-            }
-        }
-    }
-    //stop driving
+int padbreedte;
+
+void metingPadbreedte(void){
+    //neemt afmeting van de breedte van het pad in cm
+    padbreedte = distance_left + distance_right + 13;
+}
+
+void vooruit(void){
+    //agv rijdt ongecontroleerd vooruit
+    speedStepperLeft(50);
+    speedStepperRight(50);
+}
+
+void stop(void){
+    //agv stopt met rijden
     speedStepperLeft(0);
     speedStepperRight(0);
+}
+
+void rechtdoor(void){
+    int topspeed = 50;
+    //while agv binnen het pad is
+    while(distance_left<50){
+            if (distance_right < distance_left){
+                speedStepperLeft(60);
+                speedStepperRight(topspeed);
+            }
+            if(distance_left < distance_right){
+                speedStepperRight(60);
+                speedStepperLeft(topspeed);
+            }
+        }
+    //stop driving
+    stop();
 }
 
 void rechtsom(void){
-    double stepsOuter = ((((distance_left + breedteAGV + afstandWielAgv)*M_PI)/omtrekWiel)*360)/STEPANGLE;
-    double stepsInner = ((((distance_right - afstandWielAgv)*M_PI)/omtrekWiel)*360)/STEPANGLE;
-    double stepRatio = stepsOuter/stepsInner;
-
-    //clear stepcounter
-    stepCounterLeft=0;
-    //start turning
-    while(stepCounterLeft<stepsOuter){
-        speedStepperLeft(TOPSPEED);
-        speedStepperRight(TOPSPEED*stepRatio);
+    clearStepCnt();
+    while(stepCounterLeft<20){      //agv rijdt ietsjes verder buiten het pad
+        vooruit();
     }
-    //stop turning
-    speedStepperLeft(0);
-    speedStepperRight(0);
+    clearStepCnt();
+    toggleStepperDirectionRight();
+    while(stepCounterLeft<(90/5.6)){   //agv draait 90 graden
+        vooruit();
+    }
+    toggleStepperDirectionRight();
+    clearStepCnt();
+    while(stepCounterLeft<(padbreedte/5.6)){    //agv rijdt naar volgende pad
+        vooruit();
+    }
+    toggleStepperDirectionRight();      //agv draati 90 graden
+    clearStepCnt();
+    while(stepCounterLeft<(90/5.6)){
+        vooruit();
+    }
+    toggleStepperDirectionRight();
+    clearStepCnt();
+    vooruit();
+    if(distance_left<25){           //agv is in het volgende pad
+        stop();
+    }
 }
-
-/*
-stepper driver
-void initPinsStepper (void);
-void initTimer1Stepper(void);
-void initStepper(void);
-
-void speedStepperRight(int PWMRight);
-void speedStepperLeft(int PWMLeft);
-
-
-void toggledirectionStepperLeft(void);
-void toggledirectionStepperRight(void);
-
-
-ultrasoon
-volatile int distance_right;
-volatile int distance_left;
-*/

@@ -1,57 +1,57 @@
 # depslib dependency file v1.0
-1742318749 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\fuse.c
+1742322349 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\fuse.c
 	<avr/io.h>
 
-1742319360 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ir.c
+1742322960 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ir.c
 	"IR.h"
 	<avr/io.h>
 	<util/delay.h>
 
-1742319360 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ir.h
+1742322960 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ir.h
 
-1742817819 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.c
+1743346924 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.c
 	<avr/io.h>
 	<avr/interrupt.h>
 	"stepperDriver.h"
 
-1742812669 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
+1743346924 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\stepperdriver.h
 
-1742818758 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.c
+1742822358 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.c
 	<avr/io.h>
 	<avr/interrupt.h>
 	"ultrasoon.h"
 
-1742818758 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.h
+1742822358 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.h
 
-1742819523 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\main.c
+1742997049 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\main.c
 	<avr/io.h>
 	<util/delay.h>
 	<avr/interrupt.h>
 	"main.h"
 	"ultrasoon.h"
 
-1742811302 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\main.h
+1742814902 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\main.h
 	"IR.h"
 	"stepperDriver.h"
 	"ultrasoon.h"
 	"navigatieLogica.h"
 	"display.h"
 
-1742810584 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.h
+1743347821 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.h
 	"navigatieLogica.h"
 	"ultrasoon.h"
 	"stepperDriver.h"
 
-1742819569 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
+1742992088 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
 	<avr/io.h>
 	<math.h>
 	<util/delay.h>
 	"navigatieLogica.h"
 
-1742811266 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\display.c
+1742814866 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\display.c
 	<avr/io.h>
 	<util/delay.h>
 	"display.h"
 
-1742811266 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\display.h
+1742814866 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\display.h
 

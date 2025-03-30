@@ -71,3 +71,8 @@ volatile unsigned int stepCounterRight = 0;
 ISR(TIMER3_OVF_vect){
     stepCounterRight++;
 }
+
+void clearStepCnt(void){
+    stepCounterLeft = 0;
+    stepCounterRight = 0;
+}

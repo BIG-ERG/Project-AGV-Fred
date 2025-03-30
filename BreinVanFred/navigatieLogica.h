@@ -5,7 +5,10 @@
 #include "ultrasoon.h"
 #include "stepperDriver.h"
 
+void vooruit(void);
+void stop(void);
 void rechtdoor(void);
 void rechtsom(void);
+void metingPadbreedte(void);
 
 #endif // NAVIGATIELOGICA_H_INCLUDED

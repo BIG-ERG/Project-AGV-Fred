@@ -2,7 +2,6 @@
 #define STEPPER_DRIVER_H_INCLUDED
 
 #define STEPVALUE 1 //16us
-#define TOPSPEED 50 //moet nog getest worden
 
 #define STEPANGLE 5.6
 #define omtrekWiel  188.5  //D*pi
@@ -36,6 +35,7 @@ void toggleStepperDirectionLeft(void);
 
 extern volatile unsigned int stepCounterLeft;
 extern volatile unsigned int stepCounterRight;
+void clearStepCnt(void);
 
 
 #endif // STEPPER_DRIVER_H_INCLUDED
