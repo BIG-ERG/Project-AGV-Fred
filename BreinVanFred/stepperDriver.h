@@ -12,7 +12,7 @@
 #define DDR_STEP_R  DDRE
 #define PORT_STEP_R PORTE
 #define DDR_DIR_R DDRG
-#define DIRECTION_R PG4
+#define DIRECTION_R PG5
 #define PORT_DIR_R PORTG
 
 #define STEPPER_LEFT PH3

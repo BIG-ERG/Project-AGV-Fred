@@ -9,6 +9,7 @@ void vooruit(void);
 void stop(void);
 void rechtdoor(void);
 void rechtsom(void);
+void linksom(void);
 void metingPadbreedte(void);
 
 #endif // NAVIGATIELOGICA_H_INCLUDED
