@@ -12,4 +12,8 @@ void rechtsom(void);
 void linksom(void);
 void metingPadbreedte(void);
 
+//TROUBLESHOOTING
+void rechtdoor1(void);
+void rechtdoor2(void);
+
 #endif // NAVIGATIELOGICA_H_INCLUDED

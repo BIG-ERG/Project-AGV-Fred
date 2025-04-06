@@ -113,3 +113,48 @@ void linksom(void){
     }
     stop();
 }
+
+//------------------------------------TROUBLESHOOTING-----------
+
+//TESTING WITH JUST ONE SENSOR
+void rechtdoor1(void){
+    int topspeed = 50;
+    int directionState=0;
+    //while agv binnen het pad is
+    while(distance_left<50){
+        if (distance_right==10) {
+            if(directionState!=1){
+                speedStepperLeft(topspeed);
+                speedStepperRight(topspeed);
+                directionState = 1;
+            }
+        }
+        else{
+            if (distance_right < 10){
+                if(directionState!=2){
+                speedStepperLeft(60);
+                speedStepperRight(topspeed);
+                directionState = 2;
+                }
+            }
+            if(distance_right > 10){
+                if(directionState!=3){
+                speedStepperRight(60);
+                speedStepperLeft(topspeed);
+                directionState = 3;
+                }
+            }
+        }
+    }
+    //stop driving
+    stop();
+}
+
+//TESTING SPAMMING ICR
+void rechtdoor2(void){
+    int topspeed = 50;
+    while(1){
+        speedStepperLeft(topspeed);
+        speedStepperRight(topspeed);
+    }
+}
