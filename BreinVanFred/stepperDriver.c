@@ -25,8 +25,8 @@ void initPinsStepper (void){
 //stepper right
 void initTimer3Stepper(void){
     // Use mode 14, prescaler = 256
-    TCCR3A = (1<<WGM31) | (0<<WGM30) | (1<<COM3A1) | (1<<COM3A0);
-    TCCR3B = (1<<WGM33) | (1<<WGM32) | (1<<CS32) | (0<<CS31) | (0<<CS30);
+    TCCR3A = (1<<WGM31) | (0<<WGM30) | (1<<COM3A1) | (0<<COM3A0);
+    TCCR3B = (1<<WGM33) | (1<<WGM32) | (0<<CS32) | (1<<CS31) | (0<<CS30);
     TIMSK3 |= (1<<TOIE4);
 
 	//define top value
@@ -37,8 +37,8 @@ void initTimer3Stepper(void){
 //stepper left
 void initTimer4Stepper(void){
     // Use mode 14, prescaler = 256
-    TCCR4A = (1<<WGM41) | (0<<WGM40) | (1<<COM4A1) | (1<<COM4A0);
-    TCCR4B = (1<<WGM43) | (1<<WGM42) | (1<<CS42) | (0<<CS41) | (0<<CS40);
+    TCCR4A = (1<<WGM41) | (0<<WGM40) | (1<<COM4A1) | (0<<COM4A0);
+    TCCR4B = (1<<WGM43) | (1<<WGM42) | (0<<CS42) | (1<<CS41) | (0<<CS40);
     TIMSK4 |= (1<<TOIE4);
 
 	//define top value

@@ -12,8 +12,10 @@ int main(void)
     init_ultrasoon();
     initStepper();
 
-    vooruit();
+    while(1){
+    rechtdoor();
     rechtsom();
-    vooruit();
+    }
+
     return 0;
 }

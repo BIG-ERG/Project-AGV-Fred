@@ -55,7 +55,7 @@ ISR(TIMER5_CAPT_vect){
         TCCR5B &= ~(1 << ICES5);  // Switch to falling edge
     }
     else {
-        int distance = (ICR5 - start_time) / 117;  // Calculate distance in mm
+        int distance = (ICR5 - start_time) / 117;  // Calculate distance in cm
 
         if (current_sensor == 0) {
             distance_left = distance;  // Store distance for Sensor A

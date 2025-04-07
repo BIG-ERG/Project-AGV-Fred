@@ -11,9 +11,6 @@ void rechtdoor(void);
 void rechtsom(void);
 void linksom(void);
 void metingPadbreedte(void);
-
-//TROUBLESHOOTING
-void rechtdoor1(void);
-void rechtdoor2(void);
+int ramping(int originalValue , int value);
 
 #endif // NAVIGATIELOGICA_H_INCLUDED
