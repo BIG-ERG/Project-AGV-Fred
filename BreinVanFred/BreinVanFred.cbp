@@ -69,6 +69,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="navigatieLogica.h" />
+		<Unit filename="noodstop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="noodstop.h" />
 		<Unit filename="stepperDriver.c">
 			<Option compilerVar="CC" />
 		</Unit>

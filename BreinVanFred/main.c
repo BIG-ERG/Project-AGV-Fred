@@ -11,6 +11,7 @@ int main(void)
 {
     init_ultrasoon();
     initStepper();
+    initNoodstop();
 
     while(1){
     rechtdoor();
