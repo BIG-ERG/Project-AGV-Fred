@@ -31,6 +31,7 @@ void send_enable(int display_nummer);
 void display(char data, int display_nummer);
 void display_getal(unsigned int getal);
 void aantal_pakje();
+void telblokje(void);
 
 extern int pakjes;// hoeveel pakjes er worden geteld
 extern int letter;// hoeveel keer op plus is gedrukt

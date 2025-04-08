@@ -9,6 +9,7 @@
 #include <util/delay.h>
 
 #include "interface.h"
+#include "IR.h"
 int pakjes=0;
 int letter=0;
 int lettertwee=0;
@@ -464,7 +465,7 @@ void aantal_pakje()
                 }
              break;
             }
-        case 3:
+        case 3:     //transfer naar rest van de code
             {
                 if (((PIN_knop&(1<<start))==0)&&(start_ingedrukt==0))
                 {
@@ -483,6 +484,7 @@ void aantal_pakje()
                         start_ingedrukt=0;
                     }
                 }
+                            //wacht 2 seconden
                             display((char)~0b01110001,3); // geef fred op display weer
                             _delay_ms(1);
                             display((char)~0b01110011,2);
@@ -493,11 +495,26 @@ void aantal_pakje()
                             _delay_ms(1);
                             display((char)~0b11111111,0123);
                             _delay_ms(1);
+                            //start programma
                 }
                 break;
 
 
         }
 
+}
+
+void telblokje()
+{
+                    display(segmentcodes[tel%10],0);
+                   _delay_ms(1);
+                    display(segmentcodes[(tel/10)%10],1);
+                    _delay_ms(1);
+                    display(segmentcodes[(tel/100)%10],2);
+                   _delay_ms(1);
+                    display(segmentcodes[(tel/1000)%10],3);
+                    _delay_ms(1);
+                    display((char)~0b11111111,0123);
+                    _delay_ms(1);
 }
 

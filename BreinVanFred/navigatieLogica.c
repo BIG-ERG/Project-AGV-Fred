@@ -3,6 +3,7 @@
 #include <util/delay.h>
 
 #include "navigatieLogica.h"
+#include "interface.h"
 
 int padbreedte;
 
@@ -38,6 +39,7 @@ void rechtdoor(void){
     int directionState=0;
     //while agv binnen het pad is
     while(1){
+        telblokje();
         if (distance_right==distance_left) {
             if(directionState!=1){
                 speedStepperLeft(topspeed);

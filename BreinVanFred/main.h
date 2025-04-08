@@ -5,6 +5,7 @@
 #include "stepperDriver.h"
 #include "ultrasoon.h"
 #include "navigatieLogica.h"
-#include "display.h"
+#include "interface.h"
+#include "noodstop.h"
 
 #endif // MAIN_H_INCLUDED
