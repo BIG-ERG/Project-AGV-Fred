@@ -50,20 +50,20 @@ void rechtdoor(void){
         else{
             if (distance_right < distance_left){
                 if(directionState!=2){
-                    speedStepperLeft(ramping(1450, 1150));
-                    speedStepperRight(ramping(1150, 1450));
+                    speedStepperLeft(ramping(1650, 1150));
+                    speedStepperRight(ramping(1150, 1650));
                     directionState = 2;
                 }
             }
             if(distance_left < distance_right){
                 if(directionState!=3){
-                    speedStepperRight(ramping(1450, 1150));
-                    speedStepperLeft(ramping(1150, 1450));
+                    speedStepperRight(ramping(1650, 1150));
+                    speedStepperLeft(ramping(1150, 1650));
                     directionState = 3;
                 }
             }
         }
-        if((distance_right>15)||(distance_left>15)){
+        if((distance_right>20)||(distance_left>20)){
             break;
         }
     }
@@ -71,9 +71,9 @@ void rechtdoor(void){
     stop();
 }
 
-void rechtsom(void){
+void linksom(void){
     clearStepCnt();
-    while(stepCounterLeft<3100){      //agv rijdt ietsjes verder buiten het pad
+    while(stepCounterLeft<4100){      //agv rijdt ietsjes verder buiten het pad
         vooruit();
     }
     clearStepCnt();
@@ -83,7 +83,7 @@ void rechtsom(void){
     }
     toggleStepperDirectionRight();
     clearStepCnt();
-    while(stepCounterLeft<(7100)){    //agv rijdt naar volgende pad
+    while(stepCounterLeft<(5500)){    //agv rijdt naar volgende pad
         vooruit();
     }
     toggleStepperDirectionRight();      //agv draati 90 graden
@@ -100,9 +100,9 @@ void rechtsom(void){
     stop();
 }
 
-void linksom(void){
+void rechtsom(void){
     clearStepCnt();
-    while(stepCounterLeft<2100){      //agv rijdt ietsjes verder buiten het pad
+    while(stepCounterLeft<4100){      //agv rijdt ietsjes verder buiten het pad
         vooruit();
     }
     clearStepCnt();
@@ -112,7 +112,7 @@ void linksom(void){
     }
     toggleStepperDirectionLeft();
     clearStepCnt();
-    while(stepCounterLeft<(7100)){    //agv rijdt naar volgende pad
+    while(stepCounterLeft<(5500)){    //agv rijdt naar volgende pad
         vooruit();
     }
     toggleStepperDirectionLeft();      //agv draati 90 graden

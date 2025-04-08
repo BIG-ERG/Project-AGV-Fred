@@ -77,6 +77,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="stepperDriver.h" />
+		<Unit filename="uitvoer.h" />
+		<Unit filename="uivoer.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="ultrasoon.c">
 			<Option compilerVar="CC" />
 		</Unit>

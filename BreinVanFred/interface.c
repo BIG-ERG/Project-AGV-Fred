@@ -10,6 +10,8 @@
 
 #include "interface.h"
 #include "IR.h"
+#include "uitvoer.h"
+
 int pakjes=0;
 int letter=0;
 int lettertwee=0;
@@ -482,9 +484,10 @@ void aantal_pakje()
                     {
                         // start met rijden
                         start_ingedrukt=0;
+                        uitvoer();
                     }
                 }
-                            //wacht 2 seconden
+                            //display "fred" totdat gebruiker op start drukt
                             display((char)~0b01110001,3); // geef fred op display weer
                             _delay_ms(1);
                             display((char)~0b01110011,2);
@@ -495,6 +498,7 @@ void aantal_pakje()
                             _delay_ms(1);
                             display((char)~0b11111111,0123);
                             _delay_ms(1);
+
                             //start programma
                 }
                 break;
@@ -506,13 +510,14 @@ void aantal_pakje()
 
 void telblokje()
 {
-                    display(segmentcodes[tel%10],0);
+
+                    display(segmentcodes[(tel+tel2)%10],0);
                    _delay_ms(1);
-                    display(segmentcodes[(tel/10)%10],1);
+                    display(segmentcodes[((tel+tel2)/10)%10],1);
                     _delay_ms(1);
-                    display(segmentcodes[(tel/100)%10],2);
+                    display(segmentcodes[((tel+tel2)/100)%10],2);
                    _delay_ms(1);
-                    display(segmentcodes[(tel/1000)%10],3);
+                    display(segmentcodes[((tel+tel2)/1000)%10],3);
                     _delay_ms(1);
                     display((char)~0b11111111,0123);
                     _delay_ms(1);
