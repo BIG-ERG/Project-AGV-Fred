@@ -10,10 +10,9 @@
 #define port_led PORTC
 
 extern int tel;
-extern int tel2;
 void IR_init(void);
 void IR_RUN(void);
-void IR_RUN2(void);
+void irRun2(void);
 void IRSPAMMER(void);
 
 #endif // IR_H_INCLUDED

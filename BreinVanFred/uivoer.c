@@ -13,17 +13,12 @@ void uitvoer(void){
     initStepper();
     IR_init();
 
-    int temp=tel+tel2;
     int terminate = 0;
+    int temp=tel;
+
     //pad 1
     while((distance_left<15)){
         rechtdoor();
-
-        if(temp!=(tel+tel2)){
-            stop();
-            _delay_ms(1000);
-            temp= tel+tel2;
-        }
     }
     //bocht 1
     if(letter!=0){
@@ -37,9 +32,12 @@ void uitvoer(void){
         terminate ++;
     }
     //pad 2
+
+    /*
     if(terminate==0){
         while((distance_left<15)){
             rechtdoor();
+            telblokje();
             if(temp!=(tel+tel2)){
                 stop();
                 _delay_ms(1000);
@@ -62,6 +60,7 @@ void uitvoer(void){
     if(terminate==0){
         while((distance_left<15)){
             rechtdoor();
+            telblokje();
             if(temp!=(tel+tel2)){
                 stop();
                 _delay_ms(1000);
@@ -69,4 +68,5 @@ void uitvoer(void){
             }
         }
     }
+    */
 }

@@ -14,6 +14,8 @@ int main(void)
 
     while(1){
         aantal_pakje();
+        //rechtdoor();
+        //telblokje();
     }
 
     return 0;

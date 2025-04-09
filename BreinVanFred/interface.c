@@ -510,7 +510,9 @@ void aantal_pakje()
 
 void telblokje()
 {
-
+    IR_RUN();
+    display_getal(tel);
+    /*
                     display(segmentcodes[(tel+tel2)%10],0);
                    _delay_ms(1);
                     display(segmentcodes[((tel+tel2)/10)%10],1);
@@ -521,5 +523,6 @@ void telblokje()
                     _delay_ms(1);
                     display((char)~0b11111111,0123);
                     _delay_ms(1);
+    */
 }
 

@@ -4,6 +4,7 @@
 #include "navigatieLogica.h"
 #include "ultrasoon.h"
 #include "stepperDriver.h"
+#include "IR.h"
 
 void vooruit(void);
 void stop(void);

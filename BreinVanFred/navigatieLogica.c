@@ -37,31 +37,40 @@ int ramping(int originalValue , int value){
 void rechtdoor(void){
     int topspeed = 1150;
     int directionState=0;
+    jump:
+    static int temp = 0;
     //while agv binnen het pad is
     while(1){
         telblokje();
-        if (distance_right==distance_left) {
-            if(directionState!=1){
-                speedStepperLeft(topspeed);
-                speedStepperRight(topspeed);
-                directionState = 1;
+        if(tel==temp){
+            if (distance_right==distance_left) {
+                if(directionState!=1){
+                    speedStepperLeft(topspeed);
+                    speedStepperRight(topspeed);
+                    directionState = 1;
+                }
+            }
+            else{
+                if (distance_right < distance_left){
+                    if(directionState!=2){
+                        speedStepperLeft(ramping(1650, 1150));
+                        speedStepperRight(ramping(1150, 1650));
+                        directionState = 2;
+                    }
+                }
+                if(distance_left < distance_right){
+                    if(directionState!=3){
+                        speedStepperRight(ramping(1650, 1150));
+                        speedStepperLeft(ramping(1150, 1650));
+                        directionState = 3;
+                    }
+                }
             }
         }
         else{
-            if (distance_right < distance_left){
-                if(directionState!=2){
-                    speedStepperLeft(ramping(1650, 1150));
-                    speedStepperRight(ramping(1150, 1650));
-                    directionState = 2;
-                }
-            }
-            if(distance_left < distance_right){
-                if(directionState!=3){
-                    speedStepperRight(ramping(1650, 1150));
-                    speedStepperLeft(ramping(1150, 1650));
-                    directionState = 3;
-                }
-            }
+            stop();
+            temp = tel;
+            goto jump;
         }
         if((distance_right>20)||(distance_left>20)){
             break;
