@@ -14,59 +14,59 @@ void uitvoer(void){
     IR_init();
 
     int terminate = 0;
-    int temp=tel;
+    static int spaceAndTime = 0;        //om aan te geven waar binnen de uitvoer van het programma de agv zich bevindt in het geval van een noodstop actuatie
 
     //pad 1
-    while((distance_left<15)){
-        rechtdoor();
+    if(spaceAndTime==0){
+        while((distance_left<15)){
+            rechtdoor();
+        }
+        spaceAndTime++;
     }
     //bocht 1
-    if(letter!=0){
-        if(letter==1)
-            linksom();
-        else
-            rechtsom();
-    }
-    else{
-        stop();
-        terminate ++;
+    if(spaceAndTime==1){
+        if(letter!=0){
+            if(letter==1)
+                linksom();
+            else
+                rechtsom();
+        }
+        else{
+            stop();
+            terminate ++;
+        }
+        spaceAndTime++;
     }
     //pad 2
-
-    /*
-    if(terminate==0){
-        while((distance_left<15)){
-            rechtdoor();
-            telblokje();
-            if(temp!=(tel+tel2)){
-                stop();
-                _delay_ms(1000);
-                temp= tel+tel2;
+    if(spaceAndTime==2){
+        if(terminate==0){
+            while((distance_left<15)){
+                rechtdoor();
             }
         }
+        spaceAndTime++;
     }
     //bocht 2
-    if(letter!=0){
-        if(letter==1)
-            linksom();
-        else
-            rechtsom();
-    }
-    else{
-        stop();
-        terminate++;
+    if(spaceAndTime==3){
+        if(letter!=0){
+            if(letter==1)
+                linksom();
+            else
+                rechtsom();
+        }
+        else{
+            stop();
+            terminate++;
+        }
+        spaceAndTime++;
     }
     //pad 3
-    if(terminate==0){
-        while((distance_left<15)){
-            rechtdoor();
-            telblokje();
-            if(temp!=(tel+tel2)){
-                stop();
-                _delay_ms(1000);
-                temp= tel+tel2;
+    if(spaceAndTime==4){
+        if(terminate==0){
+            while((distance_left<15)){
+                rechtdoor();
             }
         }
+        spaceAndTime++;
     }
-    */
 }

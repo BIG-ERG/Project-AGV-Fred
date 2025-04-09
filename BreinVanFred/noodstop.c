@@ -12,7 +12,7 @@ void initNoodstop(void){
     sei();
 }
 
-void SAFETYFIRST(void){
+ISR(INT0_vect){
     static int safety = 0;
     if(safety==0)
         safety = 1;
@@ -21,8 +21,5 @@ void SAFETYFIRST(void){
     while(safety==1){
         stop();
     }
-}
-
-ISR(INT0_vect){
-    SAFETYFIRST();
+    uitvoer();
 }

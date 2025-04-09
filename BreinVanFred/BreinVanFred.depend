@@ -45,7 +45,7 @@
 	"stepperDriver.h"
 	"IR.h"
 
-1744209114 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
+1744223337 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
 	<avr/io.h>
 	<math.h>
 	<util/delay.h>
@@ -68,7 +68,7 @@
 
 1744108109 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\interface.h
 
-1744111505 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\noodstop.c
+1744223774 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\noodstop.c
 	"noodstop.h"
 	"navigatieLogica.h"
 	<avr/interrupt.h>

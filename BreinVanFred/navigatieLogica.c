@@ -37,9 +37,9 @@ int ramping(int originalValue , int value){
 void rechtdoor(void){
     int topspeed = 1150;
     int directionState=0;
-    jump:
     static int temp = 0;
     //while agv binnen het pad is
+    jump:
     while(1){
         telblokje();
         if(tel==temp){
