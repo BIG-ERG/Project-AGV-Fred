@@ -25,7 +25,7 @@
 
 1742822358 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\ultrasoon.h
 
-1744207830 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\main.c
+1744287092 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\main.c
 	<avr/io.h>
 	<util/delay.h>
 	<avr/interrupt.h>
@@ -39,13 +39,14 @@
 	"interface.h"
 	"noodstop.h"
 
-1744202068 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.h
+1744309598 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.h
 	"navigatieLogica.h"
 	"ultrasoon.h"
 	"stepperDriver.h"
 	"IR.h"
+	"uitvoer.h"
 
-1744223337 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
+1744309520 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\navigatielogica.c
 	<avr/io.h>
 	<math.h>
 	<util/delay.h>
@@ -68,19 +69,21 @@
 
 1744108109 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\interface.h
 
-1744223774 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\noodstop.c
+1744309515 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\noodstop.c
 	"noodstop.h"
 	"navigatieLogica.h"
+	"uitvoer.h"
 	<avr/interrupt.h>
 	<avr/io.h>
 
-1744054695 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\noodstop.h
+1744308841 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\noodstop.h
+	"interface.h"
 
-1744208818 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\uivoer.c
+1744309579 source:c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\uivoer.c
 	"uitvoer.h"
 	<avr/io.h>
 
-1744115327 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\uitvoer.h
+1744309515 c:\users\alecl\de haagse hogeschool\sophia elzinga (24022772) - project avg\code\code\project-agv-fred\breinvanfred\uitvoer.h
 	<util/delay.h>
 	"IR.h"
 	"stepperDriver.h"

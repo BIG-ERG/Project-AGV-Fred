@@ -11,5 +11,8 @@
 #include "noodstop.h"
 
 void uitvoer(void);
+void uitvoer2(void);
+
+extern int terminator;
 
 #endif // UITVOER_H_INCLUDED

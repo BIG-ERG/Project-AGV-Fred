@@ -11,6 +11,7 @@
 int main(void)
 {
     init_display();
+    initNoodstop();
 
     while(1){
         aantal_pakje();

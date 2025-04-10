@@ -80,6 +80,40 @@ void rechtdoor(void){
     stop();
 }
 
+void rechtdoor2(void){
+    static int temp = 0;
+    //while agv binnen het pad is
+    while((distance_right>20)||(distance_left>20)){
+        telblokje();
+        if(tel==temp){
+            if (distance_right==distance_left) {
+                    speedStepperLeft(1150);
+                    speedStepperRight(1150);
+            }
+            else{
+                if (distance_right < distance_left){
+                        speedStepperLeft(ramping(1650, 1150));
+                        speedStepperRight(ramping(1150, 1650));
+                }
+                if(distance_left < distance_right){
+                        speedStepperRight(ramping(1650, 1150));
+                        speedStepperLeft(ramping(1150, 1650));
+                }
+            }
+        }
+        else{
+            stop();
+            temp = tel;
+            if(tel==pakjes){
+                terminator++;
+                break;
+            }
+        }
+    }
+    //stop driving
+    stop();
+}
+
 void linksom(void){
     clearStepCnt();
     while(stepCounterLeft<4100){      //agv rijdt ietsjes verder buiten het pad
